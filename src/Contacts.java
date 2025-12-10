@@ -9,6 +9,7 @@ public class Contacts {
     private String email;
     public Contacts() {}
 
+
     public Contacts(String firstName, String lastName, String address,
                    String city, String state, String zip,
                    String phoneNumber, String email) {

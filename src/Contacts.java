@@ -7,8 +7,7 @@ public class Contacts {
     private String zip;
     private String phoneNumber;
     private String email;
-    public Contacts() {
-    }
+    public Contacts() {}
 
     public Contacts(String firstName, String lastName, String address,
                    String city, String state, String zip,

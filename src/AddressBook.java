@@ -1,24 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddressBook {
 
-    private Contacts contact;
-    public void addContact(Contacts contact) {
-        this.contact = contact;
-        System.out.println("✔ Contact added to Address Book");
+    private List<Contacts> contacts;
+
+    public AddressBook() {
+        contacts = new ArrayList<>();
     }
-    public void displayContact() {
-        if (contact != null) {
-            System.out.println("\n--- Contact Details ---");
+
+    public void addContact(Contacts contact) {
+        contacts.add(contact);
+        System.out.println("✔ Contact added successfully!");
+    }
+
+
+    public void displayContacts() {
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts available.");
+            return;
+        }
+
+        System.out.println("\n--- All Contacts ---");
+        for (Contacts contact : contacts) {
             System.out.println("First Name: " + contact.getFirstName());
             System.out.println("Last Name: " + contact.getLastName());
-            System.out.println("Address: " + contact.getAddress());
-            System.out.println("City: " + contact.getCity());
-            System.out.println("State: " + contact.getState());
-
-            System.out.println("Zip: " + contact.getZip());
             System.out.println("Phone: " + contact.getPhoneNumber());
             System.out.println("Email: " + contact.getEmail());
-        } else {
-            System.out.println("No contact available.");
+            System.out.println("-----------------------");
         }
+    }
+
+    public List<Contacts> getContacts() {
+        return contacts;
     }
 }
